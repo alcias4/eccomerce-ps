@@ -18,6 +18,9 @@ export const useData = () => {
     
 
     useEffect(()=>{
+        if(localStorage.getItem("card") === undefined){
+            localStorage.setItem("card", "[]")
+        }
         listData()
     } , [])
 

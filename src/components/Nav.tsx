@@ -2,8 +2,12 @@ import { IconBuildingStore , IconShoppingBag} from "@tabler/icons-react";
 import { Link , NavLink} from "react-router-dom";
 
 
+interface Props {
+    number:number | undefined
+}
 
-const Nav  = () => {
+
+const Nav: React.FC<Props>  = ({number}) => {
     return (
     <nav className="w-full flex px-[20%] justify-between py-5 rounded-2xl items-center">
         <figure>
@@ -19,12 +23,12 @@ const Nav  = () => {
             <li><NavLink to={"/contact"}>Contact</NavLink></li>
         </ul>
         <ul className="flex gap-5 text-2xl">
-            <li>
+            <li className="relative">
                 <NavLink to={"/"}>
                     <IconShoppingBag className="size-8" />
+                    <div className="absolute text-[14px] top-5 w-[20px] h-[20px] flex justify-center items-center rounded-full right-0 bg-red-400 text-white">{number}</div>
                 </NavLink>
             </li>
-            <li><NavLink to={"/login"}>Login</NavLink></li>
         </ul>
     </nav>
     )

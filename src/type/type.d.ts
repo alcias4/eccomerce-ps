@@ -24,3 +24,6 @@ interface removeApi {
 }
 
 type response = {image_url: string}
+
+
+export type objet = {id:number | undefined, title:string | undefined, price:number | undefined, rating: number | undefined}
