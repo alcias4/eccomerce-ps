@@ -5,7 +5,7 @@ import { Link , NavLink} from "react-router-dom";
 
 const Nav  = () => {
     return (
-    <nav className="w-full flex justify-between p-5 rounded-2xl items-center">
+    <nav className="w-full flex px-[20%] justify-between py-5 rounded-2xl items-center">
         <figure>
             <Link to={"/"} className="flex items-center text-2xl">
                 <IconBuildingStore className="text-pink-500 size-7"/>
