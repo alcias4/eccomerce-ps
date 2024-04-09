@@ -7,6 +7,7 @@ import { useData } from "./hook/useData"
 import ProductPage from "./page/InfoProduct"
 import useCard from "./hook/useCard"
 import Footer from "./components/Footer"
+import NotFound from "./page/NotFound"
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route  path="/shop" element={<ShopPage  products={dataProduct}/>}  />
             <Route  path="/shop/:id" element={<ProductPage  addCard={addCard}/>}  />
             <Route  path="/contact" element={<ContactPage  />}  />
+            <Route  path="*" element={<NotFound />}  />
           </Routes>
           <Footer />
         </main>
