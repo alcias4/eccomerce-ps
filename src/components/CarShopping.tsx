@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { objet } from "../type/type";
 import HeartRating from "./HeartRating";
 import { IconShoppingBagX } from "@tabler/icons-react";
@@ -20,6 +21,8 @@ const CarShopping:React.FC<Props> = ({listCard, removeCar}) => {
 
         return count.toFixed(3)
     }
+
+
     return (
         <ul className="absolute w-[250px] right-[10%] lg:right-[20%] 2xl:right-[25%] text-xl top-20 bg-white  lg:w-[400px] flex flex-col p-5 rounded-lg shadow-lg gap-5 z-50 max-h-[80vh] overflow-y-auto">
             {
@@ -37,7 +40,7 @@ const CarShopping:React.FC<Props> = ({listCard, removeCar}) => {
                     ))
                 }
                 <p className="border-t-[1px] pt-4">Total: {totalPrice()}</p>
-                <button className="flex justify-center bg-[#5fb0c9] text-white p-1 rounded-lg hover:opacity-70 relative font-bold transition-all" >Buy</button>      
+                <Link to={"/buy"} className="flex justify-center bg-[#5fb0c9] text-white p-1 rounded-lg hover:opacity-70 relative font-bold transition-all" >Buy</Link>      
                 </>
             }
         </ul>

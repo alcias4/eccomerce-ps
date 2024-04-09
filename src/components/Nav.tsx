@@ -1,5 +1,5 @@
 import { IconBuildingStore , IconShoppingBag, IconHome , IconBrandShopee, IconMessage} from "@tabler/icons-react";
-import { useState } from "react";
+import {  useState } from "react";
 import { Link , NavLink} from "react-router-dom";
 import CarShopping from "./CarShopping";
 import { objet } from "../type/type";
@@ -14,6 +14,8 @@ interface Props {
 
 const Nav: React.FC<Props>  = ({number, listCard, removeCar}) => {
     const [statusCard, setCars] = useState(false)
+
+ 
 
     const handleOnClick = () => {
         setCars(!statusCard)

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { objet } from "../type/type"
 
 
@@ -7,6 +7,7 @@ import { objet } from "../type/type"
 const useCard = () => {
     const [numberCar, setNumberCar] = useState<number>()
     const [listCard, setListCard] = useState<objet[]>()
+    const [statusCard, setCard ] = useState(false)
   
     const addCard = (product:objet) => {
         if (localStorage.getItem("card") !== null) {
@@ -22,8 +23,15 @@ const useCard = () => {
             setListCard(cars)
             localStorage.setItem("card", JSON.stringify(cars))
         }
-
+        
     }
+
+    useEffect(() => {
+        const cars:objet[] = JSON.parse(localStorage.getItem("card") || "[]")
+        setNumberCar(cars.length)
+        setListCard(cars)
+        localStorage.setItem("card", JSON.stringify(cars))
+    },[statusCard])
 
     const removeCard = (id:number) => {
         const filterCars = listCard?.filter((e) => e.id !== id)
@@ -36,7 +44,7 @@ const useCard = () => {
         }
     }
 
-    return {numberCar, listCard, removeCard, addCard}
+    return {numberCar, listCard, removeCard, addCard ,  setCard, statusCard}
 }
 
 export default useCard;
