@@ -39,7 +39,7 @@ const ContactPage = () => {
 
                 <div className="flex flex-col relative justify-center">
                     <IconMail className="absolute left-2 text-gray-400"/>
-                    <input type="text" placeholder="jose.perez@gmail.com..." className="p-2 pl-10  rounded-md border-[2px] focus:border-pink-400 outline-none" name="email"/>
+                    <input type="email" placeholder="jose.perez@gmail.com..." className="p-2 pl-10  rounded-md border-[2px] focus:border-pink-400 outline-none" name="email"/>
                 </div>
                 <div className="flex flex-col relative justify-center">
                     <IconDeviceMobile className="absolute left-2 text-gray-400"/>

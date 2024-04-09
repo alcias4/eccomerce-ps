@@ -27,7 +27,7 @@ function App() {
             <Route  path="/shop/:id" element={<ProductPage  addCard={addCard}/>}  />
             <Route  path="/contact" element={<ContactPage  />}  />
             <Route  path="/buy" element={<BuyPage listCard={listCard} removeCar={removeCard} setCard={setCard} status={statusCard}/>}  />
-            <Route  path="*" element={<NotFound />}  />
+            <Route  path="/*" element={<NotFound />}  />
           </Routes>
           <Footer />
         </main>

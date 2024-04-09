@@ -23,6 +23,7 @@ const ProductPage:React.FC<Props> = ({addCard}) => {
 
 
     const handleAddCard = () => {
+        
         const objet = {
             id: Number(new Date()),
             title: product?.title,
