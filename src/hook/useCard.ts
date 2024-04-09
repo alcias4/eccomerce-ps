@@ -22,7 +22,6 @@ const useCard = () => {
             setListCard(cars)
             localStorage.setItem("card", JSON.stringify(cars))
         }
-        alert("add product")
 
     }
 

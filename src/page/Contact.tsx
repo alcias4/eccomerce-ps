@@ -1,9 +1,15 @@
 import { IconUser, IconMail ,IconDeviceMobile} from "@tabler/icons-react";
+import { useState } from "react";
+import Alert from "../components/Alert";
 
-
+type not = {correct:boolean, text:string}
 
 
 const ContactPage = () => {
+    const [notification, setNotification] = useState(false)
+    const [status, setStatus] = useState<not>({correct:true, text:"The message was sent"})
+
+
     const handleSubmit = (e:React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -11,10 +17,14 @@ const ContactPage = () => {
         const data = Object.fromEntries(formData)
         
         if(data.name === "" || data.email === "" || data.phone === "" || data.description === ""){
-            alert("empty fields")
-        }else {
-            alert("The message was sent")
+     
+            setStatus({correct: false, text: "Empty fields"})
+        }  else {
+            setStatus({correct: true, text: "Send message"})
         }
+
+        setNotification(true)
+        setTimeout(() => setNotification(false), 3000)
     }
 
     return (
@@ -40,6 +50,9 @@ const ContactPage = () => {
                 </div>
                 <button className="bg-[#26b7e4] font-bold hover:scale-105 transition-all py-2 px-10 rounded-lg text-white w-[200px] self-center">Contact Us</button>
             </form>
+            {
+                notification ? <Alert text={status.text} correct={status.correct} />:null
+            }
         </div>
     )
 }

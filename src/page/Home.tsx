@@ -12,7 +12,7 @@ const HomePage = () => {
                 <Link to={"/shop"} className="flex justify-center">
                     <button 
                     className="bg-[#26b7e4] font-bold hover:scale-105 transition-all py-2 px-10 rounded-lg text-white w-[200px] hover:shadow-lg">
-                        Get start
+                        Get Start
                     </button>
                 </Link>
             </section>
