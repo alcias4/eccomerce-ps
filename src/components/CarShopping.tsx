@@ -18,10 +18,10 @@ const CarShopping:React.FC<Props> = ({listCard, removeCar}) => {
             count = count + (e?.price || 0)
         })
 
-        return count
+        return count.toFixed(3)
     }
     return (
-        <ul className="absolute w-[250px] right-[10%] lg:right-[20%] 2xl:right-[25%] text-xl top-20 bg-white  lg:w-[400px] flex flex-col p-5 rounded-lg shadow-lg gap-5 z-50">
+        <ul className="absolute w-[250px] right-[10%] lg:right-[20%] 2xl:right-[25%] text-xl top-20 bg-white  lg:w-[400px] flex flex-col p-5 rounded-lg shadow-lg gap-5 z-50 max-h-[80vh] overflow-y-auto">
             {
                 listCard?.length === 0 ?  <p className="h-[100px] w-full flex justify-center items-center">No product...</p> :<>
                 {
