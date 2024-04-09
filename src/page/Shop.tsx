@@ -19,10 +19,10 @@ const ShopPage:React.FC<Props> = ({products}) => {
     }
     
     return (
-    <ul className="flex flex-wrap justify-between gap-10 w-full pt-[100px]">
+    <ul id="main" className="flex flex-wrap justify-center md:justify-between gap-10 w-full pt-[100px] ">
         {
             products?.map((element)=> (
-                <li className="hover:scale-105  hover:shadow-2xl w-[250px] duration-200 transition-all ease-in-out rounded-lg  shadow-md bg-white text-black flex flex-col" key={element.id}>
+                <li className="hover:scale-105  hover:shadow-2xl w-[250px] duration-200 transition-all ease-in-out rounded-lg  shadow-md bg-white text-black flex flex-col" key={element.id + 23455}>
                     <figure className="p-5">
                         <img className="w-full h-[200px]" src={element.image} alt={element.title} />
                     </figure>
